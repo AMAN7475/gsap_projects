@@ -23,7 +23,6 @@ body{
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 1;
 }
 
 
@@ -33,7 +32,6 @@ body{
     background-color: rgb(237, 132, 4);
     padding-top: 10vh;
     position: relative;
-    z-index: 2;
 }
 
 #page2 h1 {
@@ -47,7 +45,6 @@ body{
     background-color: bisque;
     overflow: hidden !important;
     position: relative;
-    z-index: 1;
 }
 
 #box {

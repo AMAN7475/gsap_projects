@@ -1,8 +1,9 @@
 gsap.from("#page1 #box",{
     backgroundColor:"rgba(229, 6, 6, 1)",
-    duration:4,
+    duration:10,
+    delay:4,
     rotate:360,
-    borderRadius:"0%",
+    borderRadius:"20%",
     scrollTrigger:{
         trigger:"#page1 #box",
         scroller:"body",
