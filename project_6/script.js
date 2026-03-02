@@ -8,8 +8,12 @@ function breakTheText() {
 
     var clutter = ""
 
-    splittedText.forEach(function(elem){
-        clutter = clutter + `<span>${elem}</span>`
+    splittedText.forEach(function(elem,idx){
+        if(idx<halfValue){
+            clutter += `<span class="a">${elem}</span>`
+        }else{
+            clutter += `<span class="b">${elem}</span>`
+        }
     })
 
     h1.innerHTML = clutter
@@ -17,10 +21,18 @@ function breakTheText() {
 
 breakTheText()
 
-gsap.from("h1 span",{
-    y:70,
-    duration:0.8,
+gsap.from("h1 .a",{
+    y:80,
+    duration:0.7,
     opacity:0,
     delay:0.5,
     stagger:0.2
+})
+
+gsap.from("h1 .b",{
+    y:80,
+    duration:0.7,
+    opacity:0,
+    delay:0.5,
+    stagger:-0.2
 })
