@@ -5,8 +5,9 @@ import { useState } from 'react';
 
 const App = () => {
 
-  // const boxRef = useRef()
+  // 1st option (using useRef())
 
+  // const boxRef = useRef()
   // useGSAP(()=>{
   //   gsap.from(boxRef.current,{
   //     rotate:360,
@@ -16,6 +17,8 @@ const App = () => {
   //     y: 500
   //   })
   // })
+
+  //  2nd option (using scope)
 
   // useGSAP(()=>{
   //   gsap.from(".box",{
@@ -38,24 +41,30 @@ const App = () => {
   //   })
   // },{scope:container})
 
-  const [circle, setCircle] = useState(0)
-  const random = gsap.utils.random(-500,500,10)
+  const [xValue, setXValue] = useState(0)
+  const randomX = gsap.utils.random(-500,500,100 )
+  const [rotation, setRotation] = useState(0)
+  const rotateX = gsap.utils.random(-360,360,30)
 
+  const boxRef = useRef()
+  
   useGSAP(()=>{
-    gsap.to(".circle",{
-      x:circle,
-      duration:0.5
+    gsap.to(boxRef.current,{
+      x:xValue,
+      duration:1,
+      rotate:rotation
     })
-  },[circle])
+  },[xValue,rotation])
 
   return (
     <main>
       <button onClick={()=>{
-          setCircle(random)
+          setXValue(randomX)
+          setRotation(rotateX)
       }}>Animate</button>
-      <div className="circle"></div>
+      <div ref={boxRef} className="box"></div>
     </main>
   )
 }
 
-export default App
+export default App  

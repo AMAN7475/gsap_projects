@@ -21,10 +21,10 @@ main {
   flex-direction: column;
 }
 
-.circle {
+.box{
   height: 250px;
   width:250px;
-  border-radius: 50%;
+  border-radius: 20%;
   margin: 20px;
   background: linear-gradient(to bottom left, rgb(234, 219, 4),rgb(240, 102, 52));
 }
